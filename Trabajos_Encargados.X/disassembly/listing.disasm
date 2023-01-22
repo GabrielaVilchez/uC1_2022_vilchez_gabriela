@@ -1,0 +1,36 @@
+Disassembly Listing for proyect
+Generated From:
+C:/Users/Gabriela Vilchez/Desktop/Microcontroladores/Repositorio local/proyect.X/dist/default/production/proyect.X.production.elf
+09/01/2023 10:33:17 PM
+
+---  C:/Users/Gabriela Vilchez/Desktop/Microcontroladores/Repositorio local/proyect.X/ports1.s  ---------
+                                                  1:     PROCESSOR 18F57Q84
+                                                  2:     #include "Bit_Config.inc" /* config statements should precede project file includes.*/
+                                                  3:     #include <xc.inc>
+                                                  4:     
+                                                  5:     PSECT resetVect,class=CODE,reloc=2
+                                                  6:     resetVect:
+1FFFC  EF06     GOTO 0xC                          7:         goto Main 
+                                                  8:     
+                                                  9:     PSECT CODE
+                                                  10:     
+                                                  11:     Config_OSC:
+0000  0100     MOVLB 0x0                          12:        BANKSEL OSCCON1
+0002  0E60     MOVLW 0x60                         13:        MOVLW   0x60
+0004  6FAD     MOVWF OSCCON1, BANKED              14:        MOVWF   OSCCON1
+0006  0E03     MOVLW 0x3                          15:        MOVLW   0x03
+0008  6FB1     MOVWF OSCFRQ, BANKED               16:        MOVWF   OSCFRQ
+000A  0012     RETURN 0                           17:     RETURN
+                                                  18:        
+                                                  19:    Main:
+000C  ED00     CALL 0x0, 1                        20:        CALL Config_OSC,1
+                                                  21:    
+                                                  22:    END resetVect
+                                                  23:        
+                                                  24:     
+                                                  25:    
+                                                  26:    
+                                                  27:        
+                                                  28:        
+                                                  29:        
+                                                  30:        
